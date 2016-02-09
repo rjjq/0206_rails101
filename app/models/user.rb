@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :groups
   has_many :group_users
   has_many :participated_groups, through: :group_users, source: :group
+  has_many :posts
 
   def join!(group)
     participated_groups << group
